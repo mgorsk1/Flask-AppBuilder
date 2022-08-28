@@ -490,6 +490,10 @@ class BaseSecurityManager(AbstractSecurityManager):
         return self.appbuilder.get_app.config["OAUTH_PROVIDERS"]
 
     @property
+    def oauth_auto_sign_in(self):
+        return self.appbuilder.get_app.config["OAUTH_AUTO_SIGN_IN"]
+
+    @property
     def current_user(self):
         if current_user.is_authenticated:
             return g.user
